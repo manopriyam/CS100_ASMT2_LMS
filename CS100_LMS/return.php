@@ -2,16 +2,21 @@
 <body>
 
 <?php
-//id checkkaro already issued hai ya nahi
+	$file=fopen('issue.txt','a+');
+	$bookid=$_POST["bookid"];
+	$result='';
 
-//agar issued hai by same person toh return karana hai
+	$lines=file('issue.txt');
+	foreach($lines as $line){
+		if(stripos($line,$bookid) === false){
+		$result.=$line;
+		}
+	}
 
-//agar issued hai by diff person toh error message dikhana hai
-
-//agar issued nahi hai toh error message dikhana hai
-
+	file_put_contents('issue.txt', $result);
+	fclose($file);
+	echo "Book returned";
 ?>
-
 
 </body>
 </html>
