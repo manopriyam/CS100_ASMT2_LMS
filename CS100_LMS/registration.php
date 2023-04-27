@@ -19,7 +19,7 @@ $e3 = $_POST["pass"];
 
 $data = $e1."; ".$e2."; ".$e3.PHP_EOL;
 
-$file = fopen('userinfo.txt', 'a');
+$file = fopen("users.txt", "a");
 fwrite ($file, $data);
 fclose($file);
 

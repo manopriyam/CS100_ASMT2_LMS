@@ -1,1 +1,3 @@
-Manopriya Mondal; 12240970; manomano
+New; 1234; 12
+Manopriya; 12240970; mano
+Kriti; 12240880; kritia

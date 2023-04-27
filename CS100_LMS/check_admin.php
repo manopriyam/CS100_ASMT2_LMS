@@ -4,6 +4,7 @@
 <?php
 
 $adminkey = "123";
+
 if ( $_POST["adminpass"] == $adminkey ) {
     echo "<script> location.href='admin_login.php' </script>";
     exit();

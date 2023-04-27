@@ -15,7 +15,7 @@ $lines = file("users.txt");
 foreach ($lines as $line) {
     $parts = explode('; ', $line);
     if ( $e1 == $parts[1] ) {
-        if ( $e2 == $parts[2] ) {
+        if ( $e2 == trim($parts[2]) ) {
             $flag = 1;
         }
         else {
