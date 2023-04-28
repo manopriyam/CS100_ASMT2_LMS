@@ -68,19 +68,19 @@
                 <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book ID :</td> 
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25"></td>
+                <td><input type="text" name="name" style="width : 400px; font-size : 25" required></td>
             </tr>
             <tr>
                 <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book Name :</td> 
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25"></td>
+                <td><input type="text" name="name" style="width : 400px; font-size : 25" required></td>
             </tr>
             <tr>
                 <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Author Name :</td> 
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25"></td>
+                <td><input type="text" name="name" style="width : 400px; font-size : 25" required></td>
             </tr>
         </table>
         <br><br>

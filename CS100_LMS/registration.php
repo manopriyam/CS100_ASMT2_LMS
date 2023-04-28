@@ -25,11 +25,11 @@ fclose($file);
 
 echo "
     <table>
-        <tr style='border : 1px solid'>
+        <tr>
             <td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Name :</td> 
             <td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$e1</td>
         </tr>
-        <tr style='border : 1px solid'>
+        <tr>
             <td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Student ID :</td> 
             <td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$e2</td>
         </tr>
@@ -40,7 +40,11 @@ echo "
 
 <br><br>
 
-<a href='student.php' style='font-size : 20; font-family : Verdana, Sans-serif'>SIGN IN</a>
+<a href='student.php' style='font-size : 20; font-family : Verdana, Sans-serif'>
+<button style="width : 80; height : 40; border-radius : 5px; border : 2px solid">
+		SIGN IN
+</button>
+</a>
 
 </div>
 

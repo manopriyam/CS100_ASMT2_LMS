@@ -17,15 +17,15 @@ Please Register to Issue Books.
 	<table>
 		<tr>
 			<td style="font-size : 20; font-family : Verdana, Sans-serif" width=225px>Name :</td> 
-			<td><input type="text" name="name" style="width : 500px; font-size : 25"></td>
+			<td><input type="text" name="name" style="width : 500px; font-size : 25" required></td>
 		</tr>
 		<tr>
 			<td style="font-size : 20; font-family : Verdana, Sans-serif">Student ID : </td>
-			<td><input type="text" name="sid" style="width : 500px; font-size : 25"></td>
+			<td><input type="text" name="sid" style="width : 500px; font-size : 25" required></td>
 		</tr>
 		<tr>
 			<td style="font-size : 20; font-family : Verdana, Sans-serif">Password : </td>
-			<td><input type="password" name="pass" style="width : 500px; font-size : 25"></td>
+			<td><input type="password" name="pass" style="width : 500px; font-size : 25" required></td>
 		</tr>
 	</table>
 
