@@ -185,8 +185,7 @@ function to_return($book, $user) {
             }
             
             $data=$rec[0]."; ".$rec[1]."; ".$rec[2]."; ".$rec[3]."; ".$curr."; ".$fine."; ".PHP_EOL;
-            echo $data;
-
+            
             $file=fopen("issue_return.txt", "a");
             fwrite($file, $data);
             fclose($file);
