@@ -62,46 +62,41 @@
 
     <div style="padding-left : 20%; font-size : 20; font-family : Verdana, Sans-serif">
 
-    <form action="issue.php" method="post"> 
+    <form action="issue_return.php" method="post"> 
         <table>
             <tr>
-                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book ID :</td> 
-                <td><input type="text" name="bid" style="width : 200px; font-size : 25"></td>
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=175px>Book ID :</td> 
+                <td><input type="text" name="bid" style="width : 200px; font-size : 25" required></td>
             </tr>
             <tr>
-                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Student ID :</td> 
-                <td><input type="text" name="sid" style="width : 200px; font-size : 25"></td>
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=175px>Student ID :</td> 
+                <td><input type="text" name="sid" style="width : 200px; font-size : 25" required></td>
+            </tr>
+            <tr>
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=175px>Password :</td> 
+                <td><input type="password" name="pass" style="width : 200px; font-size : 25" required></td>
+            </tr>
+            <tr>
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=175px>Issue / Return :</td> 
+                <td>
+                    <input type="radio" id="issue" name="i_r" value="issue" required>
+                    <label for="issue" style="font-size : 20">Issue Book</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" id="return" name="i_r" value="return" required>
+                    <label for="return" style="font-size : 20">Return Book</label>
+                </td>
             </tr>
         </table>
-        <br><br>
-    	<input type="submit" value="Issue Book" style="font-size : 20; font-family : Verdana, Sans-serif">
+        <br>
+    	<input type="submit" value="Submit" style="font-size : 20; font-family : Verdana, Sans-serif">
     </form>
 
     </div>
 
-
-    <div style="text-align : center; padding : 100; font-size : 50; font-family : Verdana, Sans-serif">
-        RETURN BOOK
-    </div>
-
-    <div style="padding-left : 20%; font-size : 20; font-family : Verdana, Sans-serif">
-
-    <form action="return.php" method="post"> 
-        <table>
-            <tr>
-                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book ID :</td> 
-                <td><input type="text" name="bid" style="width : 200px; font-size : 25"></td>
-            </tr>
-            <tr>
-                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Student ID :</td> 
-                <td><input type="text" name="sid" style="width : 200px; font-size : 25"></td>
-            </tr>
-        </table>
-        <br><br>
-    	<input type="submit" value="Return Book" style="font-size : 20; font-family : Verdana, Sans-serif">
-    </form>
-
-    </div>
 </div>
 
 
