@@ -9,7 +9,7 @@
 
     <div style="font-size : 30; font font-family : Verdana, Sans-serif; padding-left : 10%; padding-bottom : 10%">
 
-    <?php 
+    <?php
 
     $lines = file("books.txt");
 
@@ -18,13 +18,13 @@
             <tr>
                 <td style='width : 125px; font-size : 18; font-family : Verdana, Sans-serif; text-align : center; padding : 2px'>
                     <b>BOOK ID</b>
-                </td> 
+                </td>
                 <td style='width : 400px; font-size : 18; font-family : Verdana, Sans-serif; text-align : center; padding : 2px'>
                     <b>BOOK NAME</b>
-                </td> 
+                </td>
                 <td style='width : 200px; font-size : 18; font-family : Verdana, Sans-serif; text-align : center; padding : 2px'>
                     <b>AUTHOR NAME</b>
-                </td> 
+                </td>
             </tr>
     ";
 
@@ -34,13 +34,13 @@
             <tr>
                 <td style='width : 125px; font-size : 16; font-family : Verdana, Sans-serif; text-align : center; padding : 4px'>
                     $parts[0]
-                </td> 
+                </td>
                 <td style='width : 400px; font-size : 16; font-family : Verdana, Sans-serif; padding : 4px'>
                     $parts[1]
-                </td> 
+                </td>
                 <td style='width : 200px; font-size : 16; font-family : Verdana, Sans-serif; padding : 4px'>
                     $parts[2]
-                </td> 
+                </td>
             </tr>
         ";
     }
@@ -62,25 +62,25 @@
 
     <div style="padding-left : 20%; font-size : 20; font-family : Verdana, Sans-serif">
 
-    <form action="add.php" method="post"> 
+    <form action="add.php" method="post">
         <table>
             <tr>
-                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book ID :</td> 
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book ID :</td>
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25"></td>
+                <td><input type="text" name="bookid" style="width : 400px; font-size : 25"></td>
             </tr>
             <tr>
-                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book Name :</td> 
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book Name :</td>
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25"></td>
+                <td><input type="text" name="bookname" style="width : 400px; font-size : 25"></td>
             </tr>
             <tr>
-                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Author Name :</td> 
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Author Name :</td>
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25"></td>
+                <td><input type="text" name="author" style="width : 400px; font-size : 25"></td>
             </tr>
         </table>
         <br><br>
