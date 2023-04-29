@@ -18,7 +18,7 @@ status : front end done
 MANOPRIYA
 
 2. Check issue/return status of users by input of Student ID
-user_status.php
+user_history.php
 status : front end done back end mostly done too
 jo return ho chuke hain unse uska history na dikhao
 
