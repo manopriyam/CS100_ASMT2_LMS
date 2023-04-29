@@ -1,89 +1,126 @@
 <html>
 <body>
-  <?php
-    $bid = $_POST["bid"];
-    $lines=file("books.txt");
-    $flag=0;
-    $flag2=0;
-    $lines2 = file("issue_return.txt");
 
-    foreach ( $lines as $line )
-    {
-      $parts = explode('; ', $line);
-      if ( $bid == $parts[0] )
-      {
-        $book_details=$parts;
-        $flag = 1;
-      }
-    }
 
-    foreach ( $lines2 as $line2 )
-    {
-      $parts2 = explode('; ', $line2);
-      if ( $bid == $parts2[0] )
-      {
-        $avail=$parts2;
-        if ( !$parts2[4] )
-        {
-          $flag2=1;
+<div style='text-align : center; padding : 100; padding-bottom : 50; font-size : 60; font-family : Verdana, Sans-serif'>
+    BOOK STATUS
+</div>
+
+
+<?php
+
+
+$e1 = $_POST["bid"];
+
+$lines=file("books.txt");
+$flag=0;
+foreach ( $lines as $line ) {
+	$parts = explode('; ', $line);
+	if ( $e1 == $parts[0] )
+	{
+		$book_details=$parts;
+		$flag = 1;
+	}
+}
+
+function unavailable($bid) {
+    $flag = 0;
+    $lines = file("issue_return.txt");
+    foreach ($lines as $line) {
+        $parts = explode('; ', $line);
+        if ( $bid == $parts[0] ) {
+            if ( !$parts[4] ) {
+                $flag = $parts;
+            }
+            else {
+                $flag = NULL;
+            }
         }
-        else
-        {
-          $flag2=0;
+    }
+    return $flag;
+}
+
+function student($sid) {
+    $lines = file("users.txt");
+    foreach ($lines as $line) {
+        $parts = explode('; ', $line);
+        if ( $sid == $parts[1] ) {
+            return $parts[0];
         }
-      }
     }
+	return;
+}
 
-    if($flag2==1) {
-      $status= "Unavailable";
-      $sid=$avail[1];
-      $dd=$avail[3];
-    }
-    else {
-      $status ="Available";
-      $sid=" ";
-      $dd=" ";
-    }
+echo "
+	<div style='padding-left : 25%; font-size : 20; font-family : Verdana, Sans-serif'>
+	<br><br>
+";
 
-    if($flag==1){
-      echo "
-          <div style='text-align : center; padding : 100;  padding-bottom : 50; font-size : 60; font-family : Verdana, Sans-serif'>
-          BOOK STATUS
-          <br><br>
-          </div>
+echo "
+	<table>
+		<tr>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Book ID  :</td>
+			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$book_details[0]</td>
+		</tr>
+		<tr>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Book Name  :</td>
+			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$book_details[1]</td>
+		</tr>
+		<tr>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Author  :</td>
+			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$book_details[2]</td>
+		</tr>
+";
 
-          <div style='padding-left : 40%; padding-bottom : 20%; font-size : 20; font-family : Verdana, Sans-serif'>
-          <table>
-              <tr>
-                  <td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Book ID  :</td>
-                  <td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$book_details[0]</td>
-              </tr>
-              <tr>
-                  <td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Book Name  :</td>
-                  <td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$book_details[1]</td>
-              </tr>
-              <tr>
-                  <td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Author  :</td>
-                  <td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$book_details[2]</td>
-              </tr>
-              <tr>
-                  <td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Availability  :</td>
-                  <td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$status</td>
-              </tr>
-              <tr>
-                  <td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Student ID  :</td>
-                  <td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$sid</td>
-              </tr>
-              <tr>
-                  <td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Due Date :</td>
-                  <td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$dd</td>
-              </tr>
-          </table>
-          </div>
-        ";
-    }
-    else
-    echo"The requested book is not in stock";
-   ?>
+if ( unavailable($e1) ) {
+	$log=unavailable($e1);
+	$status= "Unavailable";
+	$sname=student($log[1]);
+	echo "	
+		<tr>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Availability  :</td>
+			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$status</td>
+		</tr>
+		<tr>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Student ID  :</td>
+			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$log[1]</td>
+		</tr>
+		<tr>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Student Name  :</td>
+			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$sname</td>
+		</tr>
+		<tr>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Due Date :</td>
+			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$log[3]</td>
+		</tr>
+	</table>
+	";
+}
+else {
+	$status ="Available";
+	echo "
+		<tr>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Availability  :</td>
+			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$status</td>
+		</tr>
+	</table>
+    ";
+}
+
+
+?>
+
+
+<br><br>
+
+<a href='admin_login.php' style='font-size : 20; font-family : Verdana, Sans-serif'>
+    <button style="width : 100; height : 40; border-radius : 5px; border : 2px solid">
+        <b>NEXT</b>
+    </button>
+</a>
+
+</div>
+
+
 </body>
 </html>

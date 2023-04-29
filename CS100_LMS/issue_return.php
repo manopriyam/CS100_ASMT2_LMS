@@ -299,6 +299,8 @@ function to_return($book, $user) {
     </button>
 </a>
 
+</div>
+
 
 </body>
 </html>
