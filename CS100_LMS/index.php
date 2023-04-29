@@ -1,8 +1,11 @@
 <html>
+<?php
+include "header.php";
+?>
 <body>
 
-<div style="text-align : center; padding : 100; font-size : 60; font-family : Verdana, Sans-serif">
-	LIBRARY MANAGEMENT SYSTEM
+<div style="text-align : center; padding-bottom : 100; font-size : 25; font-family : Verdana, Sans-serif">
+	<b>LIBRARY MANAGEMENT SYSTEM</b>
 </div>
 
 <div style="text-align : center; padding : 50">
