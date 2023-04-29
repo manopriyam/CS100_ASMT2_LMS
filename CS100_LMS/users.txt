@@ -1,2 +1,2 @@
-Manopriya; 12240970; mano
-Kriti; 12240880; krkr
+MANOPRIYA; 12240970; mano
+KRITI; 12240880; krkr

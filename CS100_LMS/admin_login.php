@@ -3,7 +3,7 @@
 
 
 <div style="float : left; width : 60%">
-    <div style="text-align : center; padding : 100; font-size : 60; font-family : Verdana, Sans-serif">
+    <div style="text-align : center; padding : 100; padding-bottom : 50; font-size : 60; font-family : Verdana, Sans-serif">
         LIBRARY BOOK LIST
     </div>
 
@@ -56,7 +56,7 @@
 
 
 <div style="float : right; width : 40%">
-    <div style="text-align : center; padding : 100; font-size : 50; font-family : Verdana, Sans-serif">
+    <div style="text-align : center; padding : 100;  padding-bottom : 50; font-size : 35; font-family : Verdana, Sans-serif">
         ADD BOOK
     </div>
 
@@ -68,19 +68,19 @@
                 <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book ID :</td>
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25" required></td>
+                <td><input type="text" name="bid" style="width : 400px; font-size : 25" required></td>
             </tr>
             <tr>
                 <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Book Name :</td>
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25" required></td>
+                <td><input type="text" name="bname" style="width : 400px; font-size : 25" required></td>
             </tr>
             <tr>
                 <td style="font-size : 20; font-family : Verdana, Sans-serif" width=150px>Author Name :</td>
             </tr>
             <tr>
-                <td><input type="text" name="name" style="width : 400px; font-size : 25" required></td>
+                <td><input type="text" name="aname" style="width : 400px; font-size : 25" required></td>
             </tr>
         </table>
         <br><br>
@@ -88,6 +88,48 @@
     </form>
 
     </div>
+
+
+    <div style="text-align : center; padding : 100;  padding-bottom : 50; font-size : 35; font-family : Verdana, Sans-serif">
+        CHECK BOOK STATUS
+    </div>
+
+    <div style="padding-left : 20%; font-size : 20; font-family : Verdana, Sans-serif">
+
+    <form action="book_status.php" method="post">
+        <table>
+        <tr>
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=175px>Book ID :</td> 
+                <td><input type="text" name="bid" style="width : 200px; font-size : 25" required></td>
+            </tr>
+        </table>
+        <br><br>
+    	<input type="submit" value="Check" style="font-size : 20; font-family : Verdana, Sans-serif">
+    </form>
+
+    </div>
+
+    
+    <div style="text-align : center; padding : 100;  padding-bottom : 50; font-size : 35; font-family : Verdana, Sans-serif">
+        CHECK USER HISTORY
+    </div>
+
+    <div style="padding-left : 20%; padding-bottom : 50; font-size : 20; font-family : Verdana, Sans-serif">
+
+    <form action="user_history.php" method="post">
+        <table>
+            <tr>
+                <td style="font-size : 20; font-family : Verdana, Sans-serif" width=175px>Student ID :</td> 
+                <td><input type="text" name="sid" style="width : 200px; font-size : 25" required></td>
+            </tr>
+        </table>
+        <br><br>
+    	<input type="submit" value="Check" style="font-size : 20; font-family : Verdana, Sans-serif">
+    </form>
+
+    </div>
+    
+
 </div>
 
 

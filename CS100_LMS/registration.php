@@ -13,7 +13,7 @@ User has been successfully registered with the following credentials.
 
 <?php 
 
-$e1 = $_POST["name"];
+$e1 = strtoupper($_POST["name"]);
 $e2 = $_POST["sid"];
 $e3 = $_POST["pass"];
 

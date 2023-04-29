@@ -44,7 +44,6 @@ if ( $flag == 1 ) {
     else {
         to_return($book_rec, $user_rec);
     }
-    exit();
 }
 else { 
     echo "<script> location.href='user_login.php' </script>";
@@ -290,6 +289,15 @@ function to_return($book, $user) {
 
 
 ?>
+
+
+<br><br>
+
+<a href='user_login.php' style='font-size : 20; font-family : Verdana, Sans-serif'>
+    <button style="width : 100; height : 40; border-radius : 5px; border : 2px solid">
+        <b>NEXT</b>
+    </button>
+</a>
 
 
 </body>
