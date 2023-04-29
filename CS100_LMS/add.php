@@ -14,7 +14,7 @@ $e1=$_POST["bid"];
 $e2=strtoupper($_POST["bname"]);
 $e3=strtoupper($_POST["aname"]);
 
-$data=$e1."; ".$e2."; ".$e3."; ".PHP_EOL;
+$data=$e1."; ".$e2."; ".$e3.PHP_EOL;
 
 $flag = 1;
 $lines=file('books.txt');

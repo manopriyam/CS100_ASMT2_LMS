@@ -12,7 +12,7 @@
 
 $e1=$_POST["sid"];
 
-echo "<div style='padding-left : 8%; font-size : 20; font-family : Verdana, Sans-serif'>";
+echo "<div style='padding : 5%; padding-top : 0%; font-size : 20; font-family : Verdana, Sans-serif'>";
 
 $lines1 = file("users.txt");
 foreach ($lines1 as $line) {
@@ -24,13 +24,13 @@ foreach ($lines1 as $line) {
 }
 
 echo "
-	<table>
+	<table style='margin-left: auto; margin-right: auto'>
 		<tr>
-			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Student ID  :</td> 
-			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$e1</td>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=175px>Student ID  :</td> 
+			<td style='width : 300px; font-size : 20; font-family : Verdana, Sans-serif'>$e1</td>
 		
-			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=225px>Student Name  :</td> 
-			<td style='width : 500px; font-size : 20; font-family : Verdana, Sans-serif'>$user_rec[0]</td>
+			<td style='font-size : 20; font-family : Verdana, Sans-serif' width=175px>Student Name  :</td> 
+			<td style='width : 300px; font-size : 20; font-family : Verdana, Sans-serif'>$user_rec[0]</td>
 		</tr>
 	</table>
 ";
@@ -61,6 +61,9 @@ echo "
 			<td style='width : 100px; font-size : 18; font-family : Verdana, Sans-serif; text-align : center; padding : 2px'>
 				<b>FINE</b>
 			</td> 
+			<td style='width : 100px; font-size : 18; font-family : Verdana, Sans-serif; text-align : center; padding : 2px'>
+				<b>ACTION</b>
+			</td> 
 		</tr>
 ";
 
@@ -80,6 +83,12 @@ foreach ($lines as $line) {
     $parts = explode('; ', $line);
     if ( $parts[1] == $e1 ) { 
 		$book_rec=book_details($parts[0]); 
+		if ( $parts[4] ) {
+			$action="Returned";
+		}
+		else {
+			$action="Issued";
+		}
 		echo "
 		<tr>
 			<td style='width : 100px; font-size : 18; font-family : Verdana, Sans-serif; text-align : center; padding : 2px'>
@@ -103,8 +112,11 @@ foreach ($lines as $line) {
 			<td style='width : 100px; font-size : 18; font-family : Verdana, Sans-serif; text-align : center; padding : 2px'>
 				$parts[5]
 			</td> 
+			<td style='width : 100px; font-size : 18; font-family : Verdana, Sans-serif; text-align : center; padding : 2px'>
+				$action
+			</td> 
 		</tr>
-        ";
+		";
 	}
 }
 
@@ -124,6 +136,7 @@ echo "
     </button>
 </a>
 
+</div>
 
 
 </body>
